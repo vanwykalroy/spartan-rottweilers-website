@@ -7,7 +7,7 @@
 
 const DOGS = [
   {
-    name: "Spartan Legion Chevy",
+    name: "Legion Chevy of Spartan",
     tag: "Foundation Female",
     dob: "13 Dec 2005",
     sire: "Ch Benno vh Folconsnest (Belgium)",
@@ -17,30 +17,30 @@ const DOGS = [
   },
   {
     name: "Spartan Chloe",
-    tag: "Producer",
+    tag: "Female",
     dob: "04 Jul 2012",
     sire: "Ch Arzadon Tayson (Denmark)",
     dam: "Spartan Legion Chevy",
     bio: "Bred from Chevy and the world-renowned Arzadon Tayson, using frozen semen for the first time in our program. A powerful, confident female with a strong head and commanding presence — her influence still shows in the dogs we produce today.",
-    photo: "images/rottweiler-chloe-stacked-stance.jpeg"
+    photo: "images/rottweiler-chloe-stacked-stance-front.jpeg"
   },
   {
     name: "Spartan Fergi \u2018Bella\u2019",
-    tag: "Dam",
+    tag: "Female",
     dob: "05 Dec 2014",
     sire: "Champ from Royal Breed (Serbia)",
     dam: "Spartan Chloe",
     bio: "A large, powerful female with a soft, outgoing temperament. An outstanding brood bitch with excellent maternal instincts — retired after two litters to protect her long-term health.",
-    photo: "images/rottweiler-fergie-bella-alert.jpeg"
+    photo: "images/rottweiler-fergi-bella-alert-stance.jpeg"
   },
   {
-    name: "Spartan Torbit Ella",
+    name: "Torbit Ella of Spartan",
     tag: "Youngest Female",
     dob: "03 Jul 2023",
     sire: "Thanos Van Wiesenstadt (Serbia)",
     dam: "Torbrit Quera",
     bio: "The future of Spartan Rottweilers. Exceptional breed type, a strong head, short muzzle, and rich mahogany markings, paired with an energetic, confident personality — rarely seen without her favourite pink ball.",
-    photo: "images/rottweiler-torbit-ella-sitting.jpeg"
+    photo: "images/rottweiler-torbit-ella-sitting-park.jpeg"
   },
   {
     name: "Spartan Brandy",
@@ -53,12 +53,12 @@ const DOGS = [
   },
   {
     name: "Spartan Achilles \u2018Tyson\u2019",
-    tag: "Foundation Sire",
+    tag: "Stud Male",
     dob: "28 Feb 2008",
     sire: "Chanteur Salute",
     dam: "Spartan Legion Chevy",
     bio: "From our very first litter. A powerful male standing 67cm, with exceptional bone and a strong masculine head, combining German and South African bloodlines. Loyal and stable in temperament despite his imposing size.",
-    photo: "images/rottweiler-achillies-headshot.jpeg"
+    photo: "images/rottweiler-achillies-tyson-sitting.jpeg"
   },
   {
     name: "Spartan Frank \u2018Bear\u2019",
@@ -67,11 +67,11 @@ const DOGS = [
     sire: "Champ from Royal Breed (Serbia)",
     dam: "Spartan Chloe",
     bio: "Standing 68cm with exceptional size and one of the most powerful heads we've produced. Gentle and affectionate despite his presence — deeply devoted to family and adored by children.",
-    photo: "images/rottweiler-frank-bear-alert-stance.jpeg"
+    photo: "images/rottweiler-frank-bear-playing.jpeg"
   },
   {
     name: "Spartan Jackson",
-    tag: "Sire",
+    tag: "Male Bred by us",
     dob: "05 Jan 2018",
     sire: "Champ from Royal Breed (Serbia)",
     dam: "Spartan Chloe",
@@ -85,7 +85,7 @@ const DOGS = [
     sire: "",
     dam: "",
     bio: "Full pedigree details for Astrix are being added — check back soon.",
-    photo: "images/rottweiler-astrix-sitting.jpeg"
+    photo: "images/rottweiler-astrix-alert-stance.jpeg"
   }
 ];
 
