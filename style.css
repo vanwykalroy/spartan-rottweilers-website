@@ -279,8 +279,26 @@ nav a:hover { color: var(--gold-bright); }
   transform: translateY(12px); transition: transform 0.3s ease;
 }
 .lightbox.open .lightbox-card { transform: translateY(0); }
-.lightbox-photo { background: var(--surface-2); min-height: 260px; }
+.lightbox-photo { background: var(--surface-2); min-height: 260px; position: relative; }
 .lightbox-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+.lb-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 38px; height: 38px; border-radius: 50%;
+  background: rgba(12,10,8,0.55); border: 1px solid var(--rule);
+  color: var(--parchment); font-size: 0.85rem;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.lb-arrow:hover { background: rgba(12,10,8,0.8); border-color: var(--gold); color: var(--gold-bright); }
+.lb-prev { left: 0.75rem; }
+.lb-next { right: 0.75rem; }
+.lb-count {
+  position: absolute; bottom: 0.75rem; right: 0.9rem;
+  font-family: var(--label); font-size: 0.7rem; letter-spacing: 0.08em;
+  color: var(--parchment); background: rgba(12,10,8,0.55);
+  padding: 0.25rem 0.55rem; border-radius: 2px;
+}
 .lightbox-body { padding: 2.2rem; position: relative; }
 .lightbox-body::before {
   content: ''; position: absolute; top: 1.5rem; left: 2.2rem; right: 2.2rem;
