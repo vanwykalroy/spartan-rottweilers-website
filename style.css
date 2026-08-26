@@ -30,6 +30,14 @@
 
   --max: 1180px;
   --radius: 2px;
+
+  /* Hero text is always over a photo, never the plain page background —
+     so unlike --parchment/--muted/--gold above, these never flip in
+     light mode. They're deliberately excluded from the light-mode
+     override block below. */
+  --hero-text: #f3ead9;
+  --hero-sub: #d9cdb3;
+  --hero-eyebrow: #e3c377;
 }
 
 @media (prefers-color-scheme: light) {
@@ -175,25 +183,34 @@ nav a:hover { color: var(--gold-bright); }
   min-height: 82vh;
   display: flex; align-items: flex-end;
   padding-bottom: clamp(2.5rem, 6vw, 5rem);
-  background: linear-gradient(180deg, rgba(12,10,8,0.35) 0%, rgba(12,10,8,0.55) 55%, var(--ink) 100%),
+  background: linear-gradient(180deg, rgba(8,7,5,0.55) 0%, rgba(8,7,5,0.7) 55%, var(--ink) 100%),
               url('images/rottweiler-legion-chevy-competition.jpeg') center 30% / cover no-repeat;
 }
 .hero-content { max-width: 640px; }
-.hero .eyebrow { margin-bottom: 1rem; }
+.hero .eyebrow { margin-bottom: 1rem; color: var(--hero-eyebrow); }
 .hero h1 {
   font-size: clamp(2.6rem, 6vw, 4.4rem);
-  color: var(--parchment);
+  color: var(--hero-text);
   letter-spacing: 0.02em;
-  text-shadow: 2px 2px 0 rgba(0,0,0,0.55), 0 0 30px rgba(201,162,79,0.2);
+  text-shadow: 2px 2px 0 rgba(0,0,0,0.65), 0 0 30px rgba(201,162,79,0.2);
 }
 .hero h1 em {
-  font-style: normal; color: var(--gold-bright);
+  font-style: normal; color: var(--hero-eyebrow);
 }
 .hero p.lead {
-  margin-top: 1.1rem; font-size: 1.05rem; color: var(--muted);
+  margin-top: 1.1rem; font-size: 1.05rem; color: var(--hero-sub);
   max-width: 46ch;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 .hero-ctas { margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero .btn-outline {
+  color: var(--hero-text);
+  border-color: rgba(243, 234, 217, 0.55);
+}
+.hero .btn-outline:hover {
+  border-color: var(--hero-eyebrow);
+  background: rgba(243, 234, 217, 0.1);
+}
 
 /* ---------- Section headers ---------- */
 .section-head { max-width: 640px; margin-bottom: 2.75rem; }
