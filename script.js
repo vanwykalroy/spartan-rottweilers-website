@@ -170,6 +170,8 @@ let currentPhoto = 0;
 
 function renderPhoto() {
   const photos = currentDog.photos;
+  lbImg.classList.add('loading');
+  lbImg.onload = () => lbImg.classList.remove('loading');
   lbImg.src = photos[currentPhoto];
   lbImg.alt = currentDog.name + ' — photo ' + (currentPhoto + 1) + ' of ' + photos.length;
   lbCount.textContent = (currentPhoto + 1) + ' / ' + photos.length;
@@ -180,10 +182,20 @@ function renderPhoto() {
   lbCount.style.display = showArrows ? 'block' : 'none';
 }
 
+function preloadDogPhotos(dog) {
+  // Photo 0 is already loading via renderPhoto() — warm the cache for the rest
+  // so clicking next/prev shows an already-downloaded image instead of a fresh fetch.
+  dog.photos.slice(1).forEach((src) => {
+    const img = new Image();
+    img.src = src;
+  });
+}
+
 function openLightbox(i) {
   currentDog = DOGS[i];
   currentPhoto = 0;
   renderPhoto();
+  preloadDogPhotos(currentDog);
 
   lbName.textContent = currentDog.name;
   lbDob.textContent = currentDog.dob ? 'Born ' + currentDog.dob : '';
