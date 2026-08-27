@@ -32,7 +32,7 @@ const DOGS = [
       "images/rottweiler-chloe-stacked-stance.jpeg",
       "images/rottweiler-chloe-alert-stance.jpeg",
       "images/rottweiler-chloe-competition.jpeg",
-      "images/rottweiler-chloe-walking.jpeg"
+      "images/rottweiler-chloe-walking.jpeg",
     ]
   },
   {
@@ -85,7 +85,9 @@ const DOGS = [
     bio: "From our very first litter. A powerful male standing 67cm, with exceptional bone and a strong masculine head, combining German and South African bloodlines. Loyal and stable in temperament despite his imposing size.",
     photos: [
       "images/rottweiler-achillies-tyson-sitting.jpeg",
-      "images/rottweiler-achillies-laying.jpeg"
+      "images/rottweiler-achillies-tyson-laying.jpeg",
+      "images/rottweiler-achillies-tyson-laying-grass.jpeg",
+      "images/rottweiler-achillies-tyson-sitting-pool.jpeg"
     ]
   },
   {
@@ -97,7 +99,7 @@ const DOGS = [
     bio: "Standing 68cm with exceptional size and one of the most powerful heads we've produced. Gentle and affectionate despite his presence — deeply devoted to family and adored by children.",
     photos: [
       "images/rottweiler-frank-bear-playing.jpeg",
-      "images/rottweiler-frank-bear-alert-stance.jpeg"
+      "images/rottweiler-frank-bear-puppy.jpeg"
     ]
   },
   {
@@ -122,9 +124,6 @@ const DOGS = [
     bio: "Full pedigree details for Astrix are being added — check back soon.",
     photos: [
       "images/rottweiler-astrix-alert-stance.jpeg",
-      "images/rottweiler-astrix-headshot.jpeg",
-      "images/rottweiler-astrix-competition.jpeg",
-      "images/rottweiler-astrix-sitting.jpeg",
       "images/rottweiler-astrix-playing.jpeg"
     ]
   }
