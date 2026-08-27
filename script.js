@@ -85,8 +85,6 @@ const DOGS = [
     bio: "From our very first litter. A powerful male standing 67cm, with exceptional bone and a strong masculine head, combining German and South African bloodlines. Loyal and stable in temperament despite his imposing size.",
     photos: [
       "images/rottweiler-achillies-tyson-sitting.jpeg",
-      "images/rottweiler-achillies-headshot.jpeg",
-      "images/rottweiler-achillies-competition.jpeg",
       "images/rottweiler-achillies-laying.jpeg"
     ]
   },
@@ -111,7 +109,6 @@ const DOGS = [
     bio: "From a repeat litter of only three pups. A powerful, robust male with exceptional substance, strong bone, and an impressive head.",
     photos: [
       "images/rottweiler-jackson-laying.jpeg",
-      "images/rottweiler-jackson-headshot.jpeg",
       "images/rottweiler-jackson-pup-with-other-dog.jpeg",
       "images/rottweiler-jackson-puppy-laying.jpeg"
     ]
