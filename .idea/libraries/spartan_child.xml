@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="spartan-child">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/theme/spartan-child.zip!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
