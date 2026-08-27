@@ -166,16 +166,27 @@ let currentPhoto = 0;
 
 function renderPhoto() {
   const photos = currentDog.photos;
-  lbImg.classList.add('loading');
-  lbImg.onload = () => lbImg.classList.remove('loading');
-  lbImg.src = photos[currentPhoto];
-  lbImg.alt = currentDog.name + ' — photo ' + (currentPhoto + 1) + ' of ' + photos.length;
+  const targetSrc = photos[currentPhoto];
+
+  // Count/arrows update immediately — only the image swap is delayed
   lbCount.textContent = (currentPhoto + 1) + ' / ' + photos.length;
-  // Hide arrows entirely when there's only one photo — nothing to cycle through
   const showArrows = photos.length > 1;
   lbPrev.style.display = showArrows ? 'flex' : 'none';
   lbNext.style.display = showArrows ? 'flex' : 'none';
   lbCount.style.display = showArrows ? 'block' : 'none';
+
+  // Fully clear the old bitmap, not just hide it — fading opacity alone can
+  // still leave the old pixels composited in Safari during the transition,
+  // which is what caused a previous photo to "ghost" in around the edges
+  // of the new one on some phones. Removing the src forces the browser to
+  // actually drop that frame before the new one loads in.
+  lbImg.classList.add('loading');
+  lbImg.removeAttribute('src');
+  setTimeout(() => {
+    lbImg.onload = () => lbImg.classList.remove('loading');
+    lbImg.src = targetSrc;
+    lbImg.alt = currentDog.name + ' — photo ' + (currentPhoto + 1) + ' of ' + photos.length;
+  }, 160);
 }
 
 /* Handover note: compress/resize photos before adding to images/ —
