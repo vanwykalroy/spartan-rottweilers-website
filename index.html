@@ -56,17 +56,13 @@
 
     <div class="about-grid">
       <div class="about-story">
-        <p>My journey began in 2003 when I received my very first Rottweiler, Nige, as a gift from my parents. I spent the next two years studying Rottweiler genetics, researching bloodlines, and learning from experienced breeders. In 2005 I purchased my first KUSA registered foundation female, Legion Chevy of Spartan — bred via artificial insemination from imported and South African champion bloodlines, with sound genetics, exceptional structure, and clear rich mahogany markings.</p>
-        <p>Chevy became the cornerstone of our breeding program. Through her we produced several unforgettable KUSA registered dogs that shaped the direction of the kennel — her influence can still be seen in what we breed today.</p>
+        <p>Spartan Rottweilers was founded from a lifelong passion for the Rottweiler breed and a commitment to preserving and improving its quality for future generations.</p>
+        <p>My journey began in 2003 when I received my very first Rottweiler, Nige as a gift from my parents. After acquiring Nige, I spent the next two years studding rottweiler genetics, researching bloodlines, getting to know and learning from experienced breeders, and developing my knowledge of the breed. In 2005 I purchased my first KUSA Registered foundation female rottweiler Legion Chevy of Spartan. Chevy was bred through artificial insemination out of Ch Legion Anomaly and Ch Benno vh Folconsnest (Belguim) via frozen Semen and possessed sound genetics, exceptional structure, movement, and breed type. Chevy became the cornerstone of our breeding program. Through her, we bred several unforgettable KUSA registered dogs that helped establish Spartan Rottweilers and shaped the direction of our kennel - her influence can still be seen in what we breed today.</p>
       </div>
 
       <div class="about-card">
         <h3>Our Philosophy</h3>
-        <p>Our goal is to produce healthy, sound, and well-tempered Rottweilers that remain true to the breed standard while making exceptional family companions, working dogs, and show prospects. Every breeding is carefully planned — if we feel uncertain, we would rather skip and plan the next six months with certainty.</p>
-      </div>
-      <div class="about-card">
-        <h3>What We Focus On</h3>
-        <p>Health, temperament, and structure — the qualities that make the Rottweiler such a remarkable breed, preserved and passed down through every generation we breed.</p>
+        <p>At Spartan Rottweilers, we are committed to breeding healthy, well-tempered Rottweilers with strong head type, substantial bone, and sound structure. Every breeding is carefully planned to preserve the breed standard and produce loyal family companions, capable working dogs, and quality show prospects.</p>
       </div>
       <div class="about-card">
         <h3>A Working Breed</h3>
@@ -102,8 +98,8 @@
         <a class="contact-action" href="https://wa.me/27828586690?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20a%20Spartan%20Rottweilers%20puppy" target="_blank" rel="noopener">
           <span class="ico"></span> WhatsApp · 082 858 6690
         </a>
-        <a class="contact-action" href="tel:0828586690">
-          <span class="ico"></span> Call · 082 858 6690
+        <a class="contact-action" href="tel:0217058784">
+          <span class="ico"></span> Call · 021 705 8784
         </a>
         <a class="contact-action" href="mailto:bw.mullany@hotmail.com">
           <span class="ico"></span> Email · bw.mullany@hotmail.com
@@ -111,7 +107,16 @@
       </div>
     </div>
 
-    <form class="enquiry" onsubmit="return false;">
+    <form class="enquiry" action="https://formsubmit.co/bw.mullany@hotmail.com" method="POST">
+      <!-- FormSubmit config fields — control behaviour, not shown to the visitor -->
+      <input type="hidden" name="_subject" value="New puppy enquiry — Spartan Rottweilers website">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="thank-you.html">
+      <!-- Honeypot: a field real visitors never see or fill in, but spam bots
+           often fill in every field blindly. If this has a value on submit,
+           FormSubmit silently discards it as spam. -->
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
       <div>
         <label for="name">Name</label>
         <input type="text" id="name" name="name" required>
@@ -125,7 +130,6 @@
         <textarea id="message" name="message" placeholder="Tell us a little about what you're looking for..." required></textarea>
       </div>
       <button type="submit" class="btn btn-primary" style="justify-self:start; border:none;">Send Enquiry</button>
-      <p style="font-size:0.8rem; color:var(--muted);">This form is a layout placeholder — will wire it up to a form handler / email service before launch.</p>
     </form>
   </div>
 </section>

@@ -10,9 +10,9 @@ const DOGS = [
     name: "Legion Chevy of Spartan",
     tag: "Foundation Female",
     dob: "13 Dec 2005",
-    sire: "Ch Benno vh Folconsnest (Belgium)",
+    sire: "Ch Benno vh Folconsnest CH Lux., BH, AD, ZTP, VPG1, HD+/-, ED frei (Belgium)",
     dam: "Ch Legion Anomaly",
-    bio: "Our foundation female, bred via artificial insemination combining proven South African champion bloodlines with influential European genetics. Excellent breed type, sound structure, A2A2 hips, and the cornerstone of everything we've bred since.",
+    bio: "Legion Chevy of Spartan was the Foundation female of our breeding program. She was bred via artificial insemination from Ch Anomaly and Ch Benno van het Folconsnest, combining proven South African champion bloodlines with influential European genetics. Chevy possessed excellent breed type, sound structure and quality that made her an outstanding female.",
     photos: [
       "images/rottweiler-legion-chevy-competition.jpeg",
       "images/rottweiler-legion-chevy-alert-stance.jpeg",
@@ -26,13 +26,13 @@ const DOGS = [
     dob: "04 Jul 2012",
     sire: "Ch Arzadon Tayson (Denmark)",
     dam: "Legion Chevy of Spartan",
-    bio: "Bred from Chevy and the world-renowned Arzadon Tayson, using frozen semen for the first time in our program. A powerful, confident female with a strong head and commanding presence — her influence still shows in the dogs we produce today.",
+    bio: "Bred from Legion Chevy of Spartan and the world renowned Ch Arzadon Tayson (Denmark). She was the result of our first experience using frozen semen, making her a particularly special milestone in the development of our breeding program. Born via Caesarean section in the early hours of the morning as part of a litter of seven puppies, Chloe was a clone of her father Arzadon Tayson and matured into an extremely powerful female with exceptional breed type, strong bone, and a commanding presence. Her strong head, powerful structure, and unmistakable breed character have been passed down to future generations within our kennel.",
     photos: [
       "images/rottweiler-chloe-stacked-stance-front.jpeg",
       "images/rottweiler-chloe-stacked-stance.jpeg",
       "images/rottweiler-chloe-alert-stance.jpeg",
       "images/rottweiler-chloe-competition.jpeg",
-      "images/rottweiler-chloe-walking.jpeg",
+      "images/rottweiler-chloe-walking.jpeg"
     ]
   },
   {
@@ -41,7 +41,7 @@ const DOGS = [
     dob: "05 Dec 2014",
     sire: "Champ from Royal Breed (Serbia)",
     dam: "Spartan Chloe",
-    bio: "A large, powerful female with a soft, outgoing temperament. An outstanding brood bitch with excellent maternal instincts — retired after two litters to protect her long-term health.",
+    bio: "Spartan Fergi, affectionately known as Bella, was bred from Spartan Chloe and Champ from Royal Breed (Import Serbia). She was one of only three puppies in her litter and quickly developed into an exceptional female. Bella was a large and powerful bitch, standing taller and carrying more substance than many males. Despite her impressive size, she possessed a soft, outgoing temperament. Bella also proved herself to be an outstanding brood bitch, producing large, healthy litters and demonstrating excellent maternal instincts. Due to her remarkable fertility, Bella regularly produced litters of up to 13 puppies. To ensure her long term health and wellbeing, we chose to retire her after only two litters. Her contribution to our breeding program was significant, and her influence continues through her offspring today.",
     photos: [
       "images/rottweiler-fergi-bella-alert-stance.jpeg",
       "images/rottweiler-fergie-bella-alert.jpeg",
@@ -55,7 +55,7 @@ const DOGS = [
     dob: "03 Jul 2023",
     sire: "Thanos Van Wiesenstadt (Serbia)",
     dam: "Torbrit Quera",
-    bio: "The future of Spartan Rottweilers. Exceptional breed type, a strong head, short muzzle, and rich mahogany markings, paired with an energetic, confident personality — rarely seen without her favourite pink ball.",
+    bio: "Torbit Ella of Spartan Rottweilers is the youngest female in our kennel and represents the future of Spartan Rottweilers. Ella possesses a pedigree that combines many of my favorite bloodlines. Her mother is a daughter of Cochise from Royal Breed (Serbia), while her father carries the renowned Timitor bloodline (Serbia). This unique combination has produced a female with exceptional breed type, a strong and powerful head, a short muzzle, an excellent topline, compact and deep, rich mahogany markings. In addition to her impressive structure and appearance, Ella has an energetic and confident personality. She displays a balance prey drive and is rarely seen without her favourite pink ball.",
     photos: [
       "images/rottweiler-torbit-ella-sitting-park.jpeg",
       "images/rottweiler-torbit-ella-sitting.jpeg",
@@ -67,9 +67,9 @@ const DOGS = [
     name: "Spartan Brandy",
     tag: "Bred by Us",
     dob: "08 Nov 2013",
-    sire: "Legion Gibson",
-    dam: "Legion Chevy of Spartan",
-    bio: "A correct female with excellent breed type, a beautiful head, sound structure, and free-flowing movement — a strong example of successful line breeding within our program.",
+    sire: "Legion Gibson — son of CH Arzadon Tayson (Denmark)",
+    dam: "Legion Chevy — daughter of CH Benno v.h. Folconsnest (Belgium)",
+    bio: "Spartan Brandy is a correct, strong female with excellent breed type, beautiful head, strong bone, sound structure, and effortless movement. A successful line breeding that reinforces the quality, temperament, and type we strive to preserve at Spartan Rottweilers.",
     photos: [
       "images/rottweiler-brandy-alert-stance-side.jpeg",
       "images/rottweiler-brandy-alert-stance.jpeg",
@@ -80,9 +80,9 @@ const DOGS = [
     name: "Spartan Achilles \u2018Tyson\u2019",
     tag: "Stud Male",
     dob: "28 Feb 2008",
-    sire: "Chanteur Salute",
+    sire: "Chantuer Salute",
     dam: "Legion Chevy of Spartan",
-    bio: "From our very first litter. A powerful male standing 67cm, with exceptional bone and a strong masculine head, combining German and South African bloodlines. Loyal and stable in temperament despite his imposing size.",
+    bio: "Spartan Achilles, affectionately known as Tyson, was bred from our very first litter out of Chevy of Spartan and Chanteur Salute, a direct son of Ch. Chanteur Dokai. Standing at 67 cm, Tyson was a powerful male with exceptional bone, a strong masculine head, and rich dark markings. He combined the best qualities of both German and traditional South African bloodlines, resulting in a dog of impressive type and presence. Despite his imposing appearance, Tyson was a loving and loyal companion. He possessed a stable temperament, was affectionate with his family, and naturally protective when the situation required it. Tyson remains a special part of Spartan Rottweilers' history as one of the standout males from our foundation breeding program.",
     photos: [
       "images/rottweiler-achillies-tyson-sitting.jpeg",
       "images/rottweiler-achillies-tyson-laying.jpeg",
@@ -96,7 +96,7 @@ const DOGS = [
     dob: "05 Dec 2014",
     sire: "Champ from Royal Breed (Serbia)",
     dam: "Spartan Chloe",
-    bio: "Standing 68cm with exceptional size and one of the most powerful heads we've produced. Gentle and affectionate despite his presence — deeply devoted to family and adored by children.",
+    bio: "Bear was bred from Spartan Chloe and Champ from Royal Breed (Import Serbia). Bear lived by my brother, Wayne Mullany, and was one of the most impressive males we produced. Standing at an impressive 68 cm, Bear possessed exceptional size, strong bone, and an extremely powerful head that was second to none. His presence alone was enough to turn heads, yet beneath his intimidating appearance was a gentle and affectionate dog with a wonderful temperament. Bear adored children and other dogs and was deeply devoted to his family. My brother often referred to him as one of his own children. Whether spending time with the family or relaxing beside the braai, Bear was always close by, making him a much loved companion and a memorable representative of the Spartan bloodline.",
     photos: [
       "images/rottweiler-frank-bear-playing.jpeg",
       "images/rottweiler-frank-bear-puppy.jpeg"
@@ -117,11 +117,11 @@ const DOGS = [
   },
   {
     name: "Spartan Astrix",
-    tag: "Profile Coming Soon",
-    dob: "",
-    sire: "",
-    dam: "",
-    bio: "Full pedigree details for Astrix are being added — check back soon.",
+    tag: "Stud Male",
+    dob: "28 Feb 2008",
+    sire: "Chantuer Salute",
+    dam: "Legion Chevy of Spartan",
+    bio: "Astrix shares the same parents as Achilles and carries the same powerful qualities. A substantial male with strong bone, excellent head type, sound structure, and the strength and presence we value in our Rottweilers.",
     photos: [
       "images/rottweiler-astrix-alert-stance.jpeg",
       "images/rottweiler-astrix-playing.jpeg"
