@@ -80,7 +80,7 @@ const DOGS = [
     name: "Spartan Achilles \u2018Tyson\u2019",
     tag: "Stud Male",
     dob: "28 Feb 2008",
-    sire: "Chantuer Salute",
+    sire: "Chanteur Salute",
     dam: "Legion Chevy of Spartan",
     bio: "Spartan Achilles, affectionately known as Tyson, was bred from our very first litter out of Chevy of Spartan and Chanteur Salute, a direct son of Ch. Chanteur Dokai. Standing at 67 cm, Tyson was a powerful male with exceptional bone, a strong masculine head, and rich dark markings. He combined the best qualities of both German and traditional South African bloodlines, resulting in a dog of impressive type and presence. Despite his imposing appearance, Tyson was a loving and loyal companion. He possessed a stable temperament, was affectionate with his family, and naturally protective when the situation required it. Tyson remains a special part of Spartan Rottweilers' history as one of the standout males from our foundation breeding program.",
     photos: [
@@ -107,7 +107,7 @@ const DOGS = [
     tag: "Male Bred by us",
     dob: "05 Jan 2018",
     sire: "Champ from Royal Breed (Serbia)",
-    dam: "Spartan Chloe",
+    dam: "Spartan Chloe (Daughter of Arzadon Tayson (Denmark))",
     bio: "From a repeat litter of only three pups. A powerful, robust male with exceptional substance, strong bone, and an impressive head.",
     photos: [
       "images/rottweiler-jackson-laying.jpeg",
@@ -119,7 +119,7 @@ const DOGS = [
     name: "Spartan Astrix",
     tag: "Stud Male",
     dob: "28 Feb 2008",
-    sire: "Chantuer Salute",
+    sire: "Chanteur Salute",
     dam: "Legion Chevy of Spartan",
     bio: "Astrix shares the same parents as Achilles and carries the same powerful qualities. A substantial male with strong bone, excellent head type, sound structure, and the strength and presence we value in our Rottweilers.",
     photos: [
