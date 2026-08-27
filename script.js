@@ -178,6 +178,9 @@ function renderPhoto() {
   lbCount.style.display = showArrows ? 'block' : 'none';
 }
 
+/* Handover note: compress/resize photos before adding to images/ —
+   aim for under ~200KB each, longest edge ~1600px. Tools: Squoosh
+   or TinyPNG (both free, browser-based). */
 function preloadDogPhotos(dog) {
   // Photo 0 is already loading via renderPhoto() — warm the cache for the rest
   // so clicking next/prev shows an already-downloaded image instead of a fresh fetch.
