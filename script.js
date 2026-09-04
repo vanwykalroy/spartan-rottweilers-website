@@ -58,9 +58,12 @@ const DOGS = [
     bio: "Torbit Ella of Spartan Rottweilers is the youngest female in our kennel and represents the future of Spartan Rottweilers. Ella possesses a pedigree that combines many of my favorite bloodlines. Her mother is a daughter of Cochise from Royal Breed (Serbia), while her father carries the renowned Timitor bloodline (Serbia). This unique combination has produced a female with exceptional breed type, a strong and powerful head, a short muzzle, an excellent topline, compact and deep, rich mahogany markings. In addition to her impressive structure and appearance, Ella has an energetic and confident personality. She displays a balance prey drive and is rarely seen without her favourite pink ball.",
     photos: [
       "images/rottweiler-torbit-ella-sitting-park.jpeg",
-      "images/rottweiler-torbit-ella-sitting.jpeg",
+      "images/rottweiler-torbit-ella-sitting-side.jpeg",
+      "images/rottweiler-torbit-ella-puppy.jpeg",
+      "images/rottweiler-torbit-ella-pup-blanket.jpeg",
+      "images/rottweiler-torbit-ella-ty.jpeg",
       "images/rottweiler-torbit-ella-on-couch.jpeg",
-      "images/rottweiler-torbit-ella-puppy.jpeg"
+      "images/rottweiler-torbit-ella-on-couch-ball.jpeg"
     ]
   },
   {
@@ -92,7 +95,7 @@ const DOGS = [
   },
   {
     name: "Spartan Frank \u2018Bear\u2019",
-    tag: "Sire",
+    tag: "Stud Male",
     dob: "05 Dec 2014",
     sire: "Champ from Royal Breed (Serbia)",
     dam: "Spartan Chloe",
@@ -117,7 +120,7 @@ const DOGS = [
   },
   {
     name: "Spartan Astrix",
-    tag: "Stud Male",
+    tag: "Male Bred by Us",
     dob: "28 Feb 2008",
     sire: "Chanteur Salute",
     dam: "Legion Chevy of Spartan",
