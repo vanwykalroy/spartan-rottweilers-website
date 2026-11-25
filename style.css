@@ -1,18 +1,16 @@
 /* ===================================================================
-   SPARTAN ROTTWEILERS — Stylesheet
-   Design system: "Pedigree" — a working-kennel aesthetic built around
-   the client's real logo (black + antique gold) and the fact that
-   this kennel keeps real pedigree records (sire/dam, hip scores,
-   dates). Dog cards expand into a "registration card" — a genuine
-   content-driven signature, not decoration.
+   SPARTAN ROTTWEILERS — Look and layout of the website
+   This file controls colours, fonts, sizes and spacing.
+   The colours and fonts are set once in "Colours and fonts" below.
+   Change them there and the whole site updates.
    =================================================================== */
 
 /* ---------- Fonts ---------- */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Oswald:wght@400;500;600&display=swap');
 
-/* ---------- Design tokens ---------- */
+/* ---------- Colours and fonts ---------- */
 :root {
-  /* Dark (brand-native) palette — sampled from the client's own logo/header */
+  /* Default (dark) colours, taken from the Spartan logo: black and gold */
   --ink: #0c0a08;
   --surface: #1a1510;
   --surface-2: #221b13;
@@ -31,15 +29,14 @@
   --max: 1180px;
   --radius: 2px;
 
-  /* Hero text is always over a photo, never the plain page background —
-     so unlike --parchment/--muted/--gold above, these never flip in
-     light mode. They're deliberately excluded from the light-mode
-     override block below. */
+  /* Text colours for the big photo at the top of the page.
+     These stay light in both dark and light mode, because they always sit on a photo. */
   --hero-text: #f3ead9;
   --hero-sub: #d9cdb3;
   --hero-eyebrow: #e3c377;
 }
 
+/* Colours used when a visitor's phone or computer is set to light mode */
 @media (prefers-color-scheme: light) {
   :root {
     --ink: #f6f2e8;
@@ -55,11 +52,12 @@
   }
 }
 
-/* ---------- Reset ---------- */
+/* ---------- Basics: makes the site look the same in every browser ---------- */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { scroll-behavior: smooth; }
 
+/* Turns off animations for visitors who have asked their device to reduce motion */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {
@@ -96,20 +94,20 @@ h1, h2, h3 { font-family: var(--display); font-weight: 700; line-height: 1.15; }
 
 section { padding: clamp(3.5rem, 8vw, 6.5rem) 0; }
 
-/* Visible keyboard focus everywhere */
+/* Gold outline around links and buttons when someone uses the keyboard to move around the page */
 a:focus-visible, button:focus-visible, .dog-card:focus-visible {
   outline: 2px solid var(--gold-bright);
   outline-offset: 3px;
 }
 
-/* ---------- Custom paw cursor (desktop, fine pointer only) ---------- */
+/* ---------- Paw-shaped mouse pointer (computers only, not phones) ---------- */
 @media (hover: hover) and (pointer: fine) {
   a, button, .dog-card, .lightbox-close {
     cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"><g fill="%23c9a24f"><ellipse cx="14" cy="18" rx="7" ry="6"/><ellipse cx="6" cy="9" rx="2.6" ry="3.4"/><ellipse cx="12" cy="5.5" rx="2.6" ry="3.4"/><ellipse cx="18" cy="5.5" rx="2.6" ry="3.4"/><ellipse cx="23" cy="10" rx="2.4" ry="3.2"/></g></svg>') 14 14, pointer;
   }
 }
 
-/* ---------- Loading indicator ---------- */
+/* ---------- Loading screen ---------- */
 #loader {
   position: fixed; inset: 0; z-index: 999;
   background: var(--ink);
@@ -129,7 +127,7 @@ a:focus-visible, button:focus-visible, .dog-card:focus-visible {
   50% { opacity: 1; transform: scale(1.05); }
 }
 
-/* ---------- Header / nav ---------- */
+/* ---------- Top bar and menu ---------- */
 header {
   position: sticky; top: 0; z-index: 100;
   background: color-mix(in srgb, var(--ink) 88%, transparent);
@@ -177,7 +175,7 @@ nav a:hover { color: var(--gold-bright); }
 
 .nav-toggle { display: none; }
 
-/* ---------- Hero ---------- */
+/* ---------- Big photo and heading at the top of the page ---------- */
 .hero {
   position: relative;
   min-height: 82vh;
@@ -212,7 +210,7 @@ nav a:hover { color: var(--gold-bright); }
   background: rgba(243, 234, 217, 0.1);
 }
 
-/* ---------- Section headers ---------- */
+/* ---------- Section headings (small gold label, title, gold line) ---------- */
 .section-head { max-width: 640px; margin-bottom: 2.75rem; }
 .section-head h2 { font-size: clamp(1.9rem, 3.4vw, 2.6rem); margin-top: 0.6rem; color: var(--parchment); }
 .section-head p { margin-top: 0.85rem; color: var(--muted); }
@@ -225,7 +223,7 @@ nav a:hover { color: var(--gold-bright); }
   background: var(--gold); transform: rotate(45deg);
 }
 
-/* ---------- About ---------- */
+/* ---------- About Us ---------- */
 #about { background: var(--surface); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
 .about-grid {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2.5rem;
@@ -248,7 +246,7 @@ nav a:hover { color: var(--gold-bright); }
   .about-grid { grid-template-columns: 1fr; }
 }
 
-/* ---------- Dog gallery ---------- */
+/* ---------- Our Dogs cards ---------- */
 .dog-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -277,7 +275,38 @@ nav a:hover { color: var(--gold-bright); }
 .dog-info h3 { font-size: 1.15rem; color: var(--parchment); font-family: var(--display); }
 .dog-info .dob { font-family: var(--label); font-size: 0.72rem; color: var(--muted); letter-spacing: 0.06em; margin-top: 0.2rem; }
 
-/* ---------- Lightbox / pedigree card ---------- */
+/* ---------- Our Puppies photo grid ---------- */
+#puppies { border-top: 1px solid var(--rule); }
+.puppy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.25rem;
+}
+/* On phones: two puppy photos per row */
+@media (max-width: 600px) {
+  .puppy-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+}
+.puppy-tile {
+  aspect-ratio: 1 / 1; overflow: hidden;
+  background: var(--surface-2); border: 1px solid var(--rule);
+  border-radius: var(--radius); padding: 0; width: 100%;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color .25s ease;
+}
+button.puppy-tile { cursor: pointer; }
+button.puppy-tile:hover, button.puppy-tile:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px var(--shadow);
+  border-color: var(--gold-deep);
+}
+.puppy-tile img { width: 100%; height: 100%; object-fit: cover; }
+.puppy-tile.placeholder {
+  display: flex; align-items: center; justify-content: center;
+  border-style: dashed;
+  font-family: var(--label); font-size: 0.72rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--muted);
+}
+
+/* ---------- Pop-up window (photo plus the dog's details) ---------- */
 .lightbox {
   position: fixed; inset: 0; z-index: 200;
   background: rgba(6,5,4,0.86);
@@ -353,12 +382,18 @@ nav a:hover { color: var(--gold-bright); }
 }
 .lightbox-close:hover { border-color: var(--gold); color: var(--gold-bright); }
 
+/* Puppy pop-up: shows the photo only, without the details panel */
+.lightbox-card.photo-only { grid-template-columns: 1fr; max-width: 760px; }
+.lightbox-card.photo-only .lightbox-body { display: none; }
+.lightbox-card.photo-only .lightbox-photo { height: min(75vh, 640px); }
+
+/* On phones: photo on top, details underneath */
 @media (max-width: 700px) {
   .lightbox-card { grid-template-columns: 1fr; }
   .lightbox-photo { height: 260px; }
 }
 
-/* ---------- Contact ---------- */
+/* ---------- Contact and enquiry form ---------- */
 #contact { background: var(--surface); border-top: 1px solid var(--rule); }
 .contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 3.5rem; }
 .contact-actions { display: flex; flex-direction: column; gap: 0.9rem; margin-top: 1.5rem; }
@@ -390,6 +425,25 @@ form.enquiry { display: grid; gap: 1rem; }
   outline: none; border-color: var(--gold-deep);
 }
 .enquiry textarea { min-height: 120px; resize: vertical; }
+.enquiry-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; flex-wrap: wrap;
+}
+/* KUSA logo size. Only the width is set; the height adjusts to match.
+   To make the logo bigger or smaller, change 260px (largest) and 170px (smallest). */
+.kusa-badge {
+  width: clamp(170px, 45%, 260px); flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.kusa-badge img { width: 100%; height: auto; }
+.kusa-badge:has(img) .kusa-placeholder { display: none; }
+.kusa-placeholder {
+  width: 100%; height: 90px;
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  border: 1px dashed var(--gold-deep); border-radius: var(--radius);
+  font-family: var(--label); font-size: 0.66rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--muted); line-height: 1.4;
+}
 
 @media (max-width: 820px) {
   .contact-grid { grid-template-columns: 1fr; }
@@ -402,7 +456,7 @@ footer {
   color: var(--muted); border-top: 1px solid var(--rule);
 }
 
-/* ---------- Mobile nav ---------- */
+/* ---------- Phone menu: the menu folds behind the ☰ button on small screens ---------- */
 @media (max-width: 780px) {
   nav ul { display: none; }
   .nav-toggle {

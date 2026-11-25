@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<!-- Loading indicator -->
+<!-- Loading screen: the gold paw shown while the page loads -->
 <div id="loader" aria-hidden="true"><div class="loader-paw"></div></div>
 
 <header>
@@ -24,6 +24,7 @@
       <ul id="navList">
         <li><a href="#home">Home</a></li>
         <li><a href="#dogs">Our Dogs</a></li>
+        <li><a href="#puppies">Our Puppies</a></li>
         <li><a href="#about">About Us</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="#contact" class="btn btn-primary">Enquire</a></li>
@@ -81,7 +82,25 @@
       <div class="rule"></div>
     </div>
 
-    <div class="dog-grid" id="dogGrid"><!-- populated by script.js --></div>
+    <!-- The dog cards are added here automatically from the dog list in script.js.
+         To add or change a dog, edit script.js, not this file. -->
+    <div class="dog-grid" id="dogGrid"></div>
+  </div>
+</section>
+
+<!-- ================= OUR PUPPIES ================= -->
+<section id="puppies">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Our Puppies</span>
+      <h2>Bred at Spartan</h2>
+      <p>Puppies bred by Spartan Rottweilers.</p>
+      <div class="rule"></div>
+    </div>
+
+    <!-- The puppy photos are added here automatically from the puppy list in script.js.
+         To add or remove a puppy photo, edit script.js, not this file. -->
+    <div class="puppy-grid" id="puppyGrid"></div>
   </div>
 </section>
 
@@ -107,13 +126,16 @@
     </div>
 
     <form class="enquiry" action="https://formsubmit.co/bw.mullany@hotmail.com" method="POST">
-      <!-- FormSubmit config fields — control behaviour, not shown to the visitor -->
+      <!-- Enquiry form. Messages are sent to the email address in the line above
+           (through the free service formsubmit.co). To change where enquiries go,
+           change that email address.
+           The hidden lines below are form settings that visitors never see:
+           the email subject line, the email layout, and the page shown after sending. -->
       <input type="hidden" name="_subject" value="New puppy enquiry — Spartan Rottweilers website">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_next" value="thank-you.html">
-      <!-- Honeypot: a field real visitors never see or fill in, but spam bots
-           often fill in every field blindly. If this has a value on submit,
-           FormSubmit silently discards it as spam. -->
+      <!-- Spam trap: a hidden box that people never see, but spam bots fill in.
+           Messages with this box filled in are thrown away. Leave it as it is. -->
       <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
       <div>
@@ -128,7 +150,16 @@
         <label for="message">Message</label>
         <textarea id="message" name="message" placeholder="Tell us a little about what you're looking for..." required></textarea>
       </div>
-      <button type="submit" class="btn btn-primary" style="justify-self:start; border:none;">Send Enquiry</button>
+      <div class="enquiry-footer">
+        <button type="submit" class="btn btn-primary" style="border:none;">Send Enquiry</button>
+        <!-- KUSA logo. The image file is images/kusa-registered-logo.jpeg.
+             To change the logo, replace that file and keep the same file name.
+             If the file is missing, a dashed "KUSA Registered logo" box shows instead. -->
+        <div class="kusa-badge">
+          <img src="images/kusa-registered-logo.jpeg" alt="KUSA Registered" onerror="this.remove()">
+          <span class="kusa-placeholder">KUSA Registered<br>logo</span>
+        </div>
+      </div>
     </form>
   </div>
 </section>
@@ -137,7 +168,8 @@
   <div class="wrap">&copy; <span id="year"></span> Spartan Rottweilers · KUSA Registered Kennel · Cape Town, South Africa</div>
 </footer>
 
-<!-- ================= LIGHTBOX ================= -->
+<!-- ================= POP-UP WINDOW ================= -->
+<!-- Opens when a dog or puppy is clicked. Filled in automatically by script.js. -->
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
   <div class="lightbox-card">
     <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>

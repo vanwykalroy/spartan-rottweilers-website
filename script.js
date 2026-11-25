@@ -1,8 +1,20 @@
 /* ===================================================================
-   SPARTAN ROTTWEILERS — Site behaviour
-   Dog data below is transcribed directly from the client's own copy.
-   To add/edit a dog: edit the DOGS array — the gallery and the
-   lightbox "pedigree card" both render from this single source.
+   SPARTAN ROTTWEILERS — Dog and puppy lists
+
+   TO ADD OR EDIT A DOG: change the dog list directly below.
+   Each dog is one block between { and }. To add a dog, copy an
+   existing block, paste it after the last one and change the details.
+   Keep the quotation marks " " and the comma after each line.
+     name   = the dog's name
+     tag    = the small gold label on the dog's card
+     dob    = date of birth
+     sire   = father,  dam = mother
+     bio    = the description shown in the pop-up window
+     photos = the dog's photos. The first one is shown on the card.
+
+   PHOTO TIP: shrink photos before adding them so the site loads quickly.
+   Aim for under 250KB per photo and about 1100 pixels on the longest side.
+   Free websites that do this: squoosh.app or tinypng.com.
    =================================================================== */
 
 const DOGS = [
@@ -46,7 +58,8 @@ const DOGS = [
       "images/rottweiler-fergi-bella-alert-stance.jpeg",
       "images/rottweiler-fergie-bella-alert.jpeg",
       "images/rottweiler-fergie-bella-laying.jpeg",
-      "images/rottweiler-fergie-bella-strolling.jpeg"
+      "images/rottweiler-fergie-bella-strolling.jpeg",
+      "images/rottweiler-fergi-bella-ty.jpeg"
     ]
   },
   {
@@ -63,12 +76,14 @@ const DOGS = [
       "images/rottweiler-torbit-ella-pup-blanket.jpeg",
       "images/rottweiler-torbit-ella-ty.jpeg",
       "images/rottweiler-torbit-ella-on-couch.jpeg",
-      "images/rottweiler-torbit-ella-on-couch-ball.jpeg"
+      "images/rottweiler-torbit-ella-on-couch-ball.jpeg",
+      "images/rottweiler-torbit-ella-girl.jpeg",
+      "images/rottweiler-torbit-ella-couch.jpeg"
     ]
   },
   {
     name: "Spartan Brandy",
-    tag: "Bred by Us",
+    tag: "Female Bred by Us",
     dob: "08 Nov 2013",
     sire: "Legion Gibson — son of CH Arzadon Tayson (Denmark)",
     dam: "Legion Chevy — daughter of CH Benno v.h. Folconsnest (Belgium)",
@@ -81,7 +96,7 @@ const DOGS = [
   },
   {
     name: "Spartan Achilles \u2018Tyson\u2019",
-    tag: "Stud Male",
+    tag: "Stud Male Bred by Spartan",
     dob: "28 Feb 2008",
     sire: "Chanteur Salute",
     dam: "Legion Chevy of Spartan",
@@ -90,12 +105,13 @@ const DOGS = [
       "images/rottweiler-achillies-tyson-sitting.jpeg",
       "images/rottweiler-achillies-tyson-laying.jpeg",
       "images/rottweiler-achillies-tyson-laying-grass.jpeg",
-      "images/rottweiler-achillies-tyson-sitting-pool.jpeg"
+      "images/rottweiler-achillies-tyson-sitting-pool.jpeg",
+      "images/rottweiler-achilles-tyson-woman.jpeg"
     ]
   },
   {
     name: "Spartan Frank \u2018Bear\u2019",
-    tag: "Stud Male",
+    tag: "Stud Male Bred by Spartan",
     dob: "05 Dec 2014",
     sire: "Champ from Royal Breed (Serbia)",
     dam: "Spartan Chloe",
@@ -107,7 +123,7 @@ const DOGS = [
   },
   {
     name: "Spartan Jackson",
-    tag: "Male Bred by us",
+    tag: "Stud Male Bred by Spartan",
     dob: "05 Jan 2018",
     sire: "Champ from Royal Breed (Serbia)",
     dam: "Spartan Chloe (Daughter of Arzadon Tayson (Denmark))",
@@ -132,7 +148,34 @@ const DOGS = [
   }
 ];
 
-/* ---------- Render dog gallery ---------- */
+/* ---------- Puppy photos ----------
+   TO ADD A PUPPY PHOTO:
+     1. Save the photo in the images/puppies folder.
+     2. Add a line for it to the list below, in the same format as the others:
+          "images/puppies/file-name.jpeg",
+   The file name must match exactly, including the ending (.jpeg or .jpg).
+   Saving the photo in the folder alone will NOT make it appear on the site.
+   To remove a photo, delete its line. Photos appear in the same order as the list.
+   If the list is empty, "Photo coming soon" boxes are shown instead. */
+const PUPPIES = [
+  "images/puppies/pup-group-litter.jpeg",
+  "images/puppies/pup-2.jpeg",
+  "images/puppies/pup-hand.jpeg",
+  "images/puppies/pup-laying.jpeg",
+  "images/puppies/pup-sit.jpeg",
+  "images/puppies/pup-purple-blanket.jpeg",
+  "images/puppies/pup-stare.jpeg",
+  "images/puppies/pup-sitting.jpeg",
+  "images/puppies/pup-laying-table.jpeg",
+];
+const PUPPY_PLACEHOLDERS = 10; // How many "Photo coming soon" boxes to show when the list is empty
+
+/* ===================================================================
+   Everything below this line is code that builds the page from the
+   lists above. You should not need to change anything below here.
+   =================================================================== */
+
+/* ---------- Build the dog cards ---------- */
 const grid = document.getElementById('dogGrid');
 
 DOGS.forEach((dog, i) => {
@@ -153,7 +196,34 @@ DOGS.forEach((dog, i) => {
   grid.appendChild(card);
 });
 
-/* ---------- Lightbox ---------- */
+/* ---------- Build the puppy photo grid ---------- */
+const puppyGrid = document.getElementById('puppyGrid');
+
+// Reads each line of the puppy list.
+function toPuppy(entry) {
+  return typeof entry === 'string' ? { src: entry } : entry;
+}
+
+if (PUPPIES.length === 0) {
+  for (let i = 0; i < PUPPY_PLACEHOLDERS; i++) {
+    const tile = document.createElement('div');
+    tile.className = 'puppy-tile placeholder';
+    tile.textContent = 'Photo coming soon';
+    puppyGrid.appendChild(tile);
+  }
+} else {
+  PUPPIES.forEach((entry, i) => {
+    const pup = toPuppy(entry);
+    const tile = document.createElement('button');
+    tile.className = 'puppy-tile';
+    tile.setAttribute('aria-label', 'View photo: ' + (pup.alt || 'Spartan puppy'));
+    tile.innerHTML = `<img src="${pup.src}" alt="${pup.alt || 'Puppy bred by Spartan Rottweilers'}" loading="lazy">`;
+    tile.addEventListener('click', () => openPuppyLightbox(i));
+    puppyGrid.appendChild(tile);
+  });
+}
+
+/* ---------- Pop-up window for dog and puppy photos ---------- */
 const lightbox = document.getElementById('lightbox');
 const lbImg = document.getElementById('lbImg');
 const lbName = document.getElementById('lbName');
@@ -166,23 +236,21 @@ const lbCount = document.getElementById('lbCount');
 let lastFocused = null;
 let currentDog = null;
 let currentPhoto = 0;
+const lbCard = lightbox.querySelector('.lightbox-card');
 
 function renderPhoto() {
   const photos = currentDog.photos;
   const targetSrc = photos[currentPhoto];
 
-  // Count/arrows update immediately — only the image swap is delayed
+  // Update the photo counter (e.g. 2 / 5) and show the arrows if there is more than one photo
   lbCount.textContent = (currentPhoto + 1) + ' / ' + photos.length;
   const showArrows = photos.length > 1;
   lbPrev.style.display = showArrows ? 'flex' : 'none';
   lbNext.style.display = showArrows ? 'flex' : 'none';
   lbCount.style.display = showArrows ? 'block' : 'none';
 
-  // Fully clear the old bitmap, not just hide it — fading opacity alone can
-  // still leave the old pixels composited in Safari during the transition,
-  // which is what caused a previous photo to "ghost" in around the edges
-  // of the new one on some phones. Removing the src forces the browser to
-  // actually drop that frame before the new one loads in.
+  // Clear the old photo completely before showing the next one.
+  // Without this, some phones briefly show the previous photo around the edges.
   lbImg.classList.add('loading');
   lbImg.removeAttribute('src');
   setTimeout(() => {
@@ -192,22 +260,37 @@ function renderPhoto() {
   }, 160);
 }
 
-/* Handover note: compress/resize photos before adding to images/ —
-   aim for under ~250KB each, longest edge ~1100px (nothing on this
-   site displays a photo larger than ~500px, even on retina screens).
-   Tools: Squoosh or TinyPNG (both free, browser-based). */
+// Load the other photos in the background, so the arrows switch photos instantly.
 function preloadDogPhotos(dog) {
-  // Photo 0 is already loading via renderPhoto() — warm the cache for the rest
-  // so clicking next/prev shows an already-downloaded image instead of a fresh fetch.
   dog.photos.slice(1).forEach((src) => {
     const img = new Image();
     img.src = src;
   });
 }
 
+function showLightbox() {
+  lastFocused = document.activeElement;
+  lightbox.classList.add('open');
+  lightbox.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('lightboxClose').focus();
+}
+
+// Puppy photos use the same pop-up, but show the photo only, without the details panel.
+// The arrows move through all the puppy photos.
+function openPuppyLightbox(i) {
+  currentDog = { name: 'Spartan puppy', photos: PUPPIES.map(p => toPuppy(p).src) };
+  currentPhoto = i;
+  lbCard.classList.add('photo-only');
+  renderPhoto();
+  preloadDogPhotos(currentDog);
+  showLightbox();
+}
+
 function openLightbox(i) {
   currentDog = DOGS[i];
   currentPhoto = 0;
+  lbCard.classList.remove('photo-only');
   renderPhoto();
   preloadDogPhotos(currentDog);
 
@@ -224,11 +307,7 @@ function openLightbox(i) {
 
   lbBio.textContent = currentDog.bio;
 
-  lastFocused = document.activeElement;
-  lightbox.classList.add('open');
-  lightbox.setAttribute('aria-hidden', 'false');
-  document.body.style.overflow = 'hidden';
-  document.getElementById('lightboxClose').focus();
+  showLightbox();
 }
 
 function showPrevPhoto() {
@@ -260,7 +339,7 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowRight') showNextPhoto();
 });
 
-/* ---------- Mobile nav toggle ---------- */
+/* ---------- Phone menu: opens and closes the ☰ menu ---------- */
 const navToggle = document.getElementById('navToggle');
 const navList = document.getElementById('navList');
 navToggle.addEventListener('click', () => {
@@ -272,10 +351,10 @@ navList.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
   navToggle.setAttribute('aria-expanded', 'false');
 }));
 
-/* ---------- Loader ---------- */
+/* ---------- Hide the loading screen once the page has loaded ---------- */
 window.addEventListener('load', () => {
   document.getElementById('loader').classList.add('hidden');
 });
 
-/* ---------- Footer year ---------- */
+/* ---------- Puts the current year in the footer automatically ---------- */
 document.getElementById('year').textContent = new Date().getFullYear();
